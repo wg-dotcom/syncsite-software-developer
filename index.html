@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Developer Candidates | Syncsite × Sagan White Glove</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sync-navy:    #0F1E3C;
+            --sync-navy2:   #162444;
+            --sync-navy3:   #1C2E52;
+            --sync-blue:    #2563EB;
+            --sync-blue-lt: #3B82F6;
+            --sync-sky:     #EFF6FF;
+            --sync-sky2:    #DBEAFE;
+            --sync-white:   #FFFFFF;
+            --sync-light:   #F8FAFC;
+            --sync-gray:    #64748B;
+            --sync-gray-lt: #E2E8F0;
+            --sync-text:    #0F172A;
+            --sync-text2:   #1E293B;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: var(--sync-text);
+            background: var(--sync-white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== TOP BAR ===== */
+        .topbar {
+            background: var(--sync-blue);
+            height: 4px;
+            width: 100%;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: var(--sync-navy);
+            color: var(--sync-white);
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            right: -80px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -60px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 40px 72px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .hero-brand-syncsite {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: var(--sync-white);
+        }
+
+        .hero-brand-divider {
+            width: 1px;
+            height: 20px;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .hero-brand-sagan {
+            font-size: 13px;
+            color: rgba(255,255,255,0.4);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--sync-blue-lt);
+            background: rgba(59, 130, 246, 0.12);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            padding: 6px 14px;
+            border-radius: 100px;
+            margin-bottom: 28px;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--sync-blue-lt);
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.08;
+            letter-spacing: -1.5px;
+            margin-bottom: 24px;
+            max-width: 700px;
+        }
+
+        .hero h1 strong {
+            color: var(--sync-blue-lt);
+        }
+
+        .hero-subtitle {
+            font-size: 17px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.75;
+            max-width: 620px;
+            margin-bottom: 52px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 880px;
+            background: rgba(255,255,255,0.03);
+        }
+
+        .hero-meta-item {
+            flex: 1;
+            min-width: 160px;
+            padding: 20px 24px;
+            border-right: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .hero-meta-item:last-child { border-right: none; }
+
+        .hero-meta-label {
+            display: block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+            margin-bottom: 6px;
+        }
+
+        .hero-meta-value {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--sync-white);
+        }
+
+        /* ===== EDITORIAL ===== */
+        .editorial {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .editorial-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--sync-blue);
+            margin-bottom: 20px;
+        }
+
+        .editorial h2 {
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.3;
+            margin-bottom: 28px;
+            color: var(--sync-text);
+        }
+
+        .editorial p {
+            font-size: 16px;
+            line-height: 1.85;
+            color: var(--sync-gray);
+            margin-bottom: 20px;
+        }
+
+        .editorial p strong {
+            color: var(--sync-text);
+            font-weight: 600;
+        }
+
+        .editorial-divider {
+            width: 40px;
+            height: 3px;
+            background: var(--sync-blue);
+            border-radius: 2px;
+            margin: 36px 0;
+        }
+
+        /* ===== CANDIDATES ===== */
+        .candidates-section {
+            background: var(--sync-light);
+            padding: 80px 0;
+        }
+
+        .candidates-header {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+            margin-bottom: 56px;
+        }
+
+        .candidates-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+            color: var(--sync-text);
+        }
+
+        .candidates-header p {
+            font-size: 16px;
+            color: var(--sync-gray);
+        }
+
+        .candidate-card {
+            max-width: 1100px;
+            margin: 0 auto 40px;
+            padding: 0 40px;
+        }
+
+        .card {
+            background: var(--sync-white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 32px rgba(0,0,0,0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 16px 48px rgba(0,0,0,0.1);
+        }
+
+        .card-top {
+            background: var(--sync-navy);
+            padding: 36px 44px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .card-identity {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .card-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(59, 130, 246, 0.15);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--sync-blue-lt);
+            flex-shrink: 0;
+        }
+
+        .card-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--sync-white);
+            letter-spacing: -0.3px;
+        }
+
+        .card-title {
+            font-size: 13px;
+            color: rgba(255,255,255,0.45);
+            margin-top: 3px;
+        }
+
+        .card-meta-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        .card-salary {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--sync-blue-lt);
+            background: rgba(59, 130, 246, 0.12);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            padding: 4px 14px;
+            border-radius: 100px;
+        }
+
+        .card-body {
+            padding: 40px 44px;
+        }
+
+        .card-narrative {
+            font-size: 15.5px;
+            line-height: 1.85;
+            color: var(--sync-gray);
+            margin-bottom: 32px;
+        }
+
+        .card-narrative strong {
+            color: var(--sync-text);
+            font-weight: 600;
+        }
+
+        /* ===== SIGNAL TAGS ===== */
+        .signal-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+
+        .signal-tag {
+            font-size: 11.5px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            padding: 5px 12px;
+            border-radius: 6px;
+            background: #F0FDF4;
+            color: #166534;
+            border: 1px solid #BBF7D0;
+        }
+
+        .signal-tag.blue {
+            background: var(--sync-sky);
+            color: #1D4ED8;
+            border-color: var(--sync-sky2);
+        }
+
+        .signal-tag.gray {
+            background: #F8FAFC;
+            color: #374151;
+            border-color: var(--sync-gray-lt);
+        }
+
+        /* ===== STATS ===== */
+        .card-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .stat-box {
+            background: var(--sync-light);
+            border-radius: 10px;
+            padding: 16px 20px;
+        }
+
+        .stat-label {
+            font-size: 10.5px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--sync-gray);
+            margin-bottom: 6px;
+        }
+
+        .stat-value {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--sync-text);
+        }
+
+        /* ===== CTA BUTTONS ===== */
+        .card-footer {
+            border-top: 1px solid var(--sync-gray-lt);
+            padding: 20px 44px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .card-footer-note {
+            font-size: 13px;
+            color: var(--sync-gray);
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 9px 18px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--sync-blue);
+            color: var(--sync-white);
+            border: 1.5px solid var(--sync-blue);
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            border-color: #1d4ed8;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--sync-text);
+            border: 1.5px solid var(--sync-gray-lt);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--sync-blue);
+            color: var(--sync-blue);
+            background: var(--sync-sky);
+        }
+
+        .btn svg {
+            width: 13px;
+            height: 13px;
+            flex-shrink: 0;
+        }
+
+        /* ===== NO VIDEO STATE ===== */
+        .no-video {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 12.5px;
+            color: rgba(100, 116, 139, 0.6);
+            font-style: italic;
+        }
+
+        /* ===== RECRUITER ===== */
+        .recruiter-section {
+            background: var(--sync-white);
+            padding: 80px 0;
+        }
+
+        .recruiter-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .recruiter-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .recruiter-subtitle {
+            font-size: 16px;
+            color: var(--sync-gray);
+            margin-bottom: 48px;
+        }
+
+        .recruiter-card {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            background: var(--sync-navy);
+            border-radius: 16px;
+            padding: 40px 48px;
+            max-width: 720px;
+        }
+
+        .recruiter-avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: rgba(59, 130, 246, 0.15);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--sync-blue-lt);
+            flex-shrink: 0;
+        }
+
+        .recruiter-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--sync-white);
+            margin-bottom: 4px;
+        }
+
+        .recruiter-role {
+            font-size: 13px;
+            color: rgba(255,255,255,0.45);
+            margin-bottom: 16px;
+        }
+
+        .recruiter-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .recruiter-contact a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--sync-blue-lt);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .recruiter-contact a:hover {
+            color: #93c5fd;
+        }
+
+        /* ===== SAGAN STRIP ===== */
+        .sagan-strip {
+            background: var(--sync-light);
+            border-top: 1px solid var(--sync-gray-lt);
+            padding: 40px;
+        }
+
+        .sagan-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+        }
+
+        .sagan-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .sagan-logo {
+            font-size: 17px;
+            font-weight: 800;
+            color: var(--sync-text);
+            letter-spacing: -0.5px;
+        }
+
+        .sagan-desc {
+            font-size: 13px;
+            color: var(--sync-gray);
+            max-width: 420px;
+            line-height: 1.6;
+        }
+
+        .sagan-stats {
+            display: flex;
+            gap: 32px;
+        }
+
+        .sagan-stat {
+            text-align: center;
+        }
+
+        .sagan-stat-value {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--sync-text);
+            letter-spacing: -0.5px;
+        }
+
+        .sagan-stat-label {
+            font-size: 11px;
+            color: var(--sync-gray);
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--sync-navy);
+            color: rgba(255,255,255,0.3);
+            text-align: center;
+            padding: 32px 40px;
+            font-size: 12.5px;
+        }
+
+        .footer a {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 34px; }
+            .hero-meta { flex-direction: column; }
+            .hero-meta-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+            .hero-meta-item:last-child { border-bottom: none; }
+            .card-top { flex-direction: column; gap: 20px; }
+            .card-meta-right { align-items: flex-start; }
+            .card-body, .card-top { padding: 28px; }
+            .card-footer { flex-direction: column; align-items: flex-start; padding: 18px 28px; }
+            .card-stats { grid-template-columns: repeat(2, 1fr); }
+            .hero-inner, .editorial, .recruiter-inner { padding-left: 24px; padding-right: 24px; }
+            .candidate-card, .candidates-header { padding: 0 16px; }
+            .recruiter-card { flex-direction: column; align-items: flex-start; padding: 28px 32px; }
+            .sagan-inner { flex-direction: column; }
+            .sagan-stats { justify-content: center; }
+            .cta-group { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="topbar"></div>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+    <div class="hero-inner">
+        <div class="hero-brand">
+            <span class="hero-brand-syncsite">Syncsite</span>
+            <span class="hero-brand-divider"></span>
+            <span class="hero-brand-sagan">Sagan White Glove</span>
+        </div>
+        <div class="hero-badge">Software Developer Selection · March 2026</div>
+        <h1>Your next<br><strong>Software Developer</strong><br>is ready.</h1>
+        <p class="hero-subtitle">Four developers. All screened for .NET and C# depth, written English fluency, and practical AI literacy. Available immediately to work CST hours and integrate into your delivery team.</p>
+        <div class="hero-meta">
+            <div class="hero-meta-item">
+                <span class="hero-meta-label">Role</span>
+                <span class="hero-meta-value">Software Developer</span>
+            </div>
+            <div class="hero-meta-item">
+                <span class="hero-meta-label">Candidates</span>
+                <span class="hero-meta-value">4 Selected</span>
+            </div>
+            <div class="hero-meta-item">
+                <span class="hero-meta-label">Non-Negotiables</span>
+                <span class="hero-meta-value">C# · .NET · SQL Server · AI Literacy</span>
+            </div>
+            <div class="hero-meta-item">
+                <span class="hero-meta-label">Schedule</span>
+                <span class="hero-meta-value">Mon–Fri · 8am–5pm CST</span>
+            </div>
+            <div class="hero-meta-item">
+                <span class="hero-meta-label">Budget Range</span>
+                <span class="hero-meta-value">$3,500 – $4,000 / mo</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ===== EDITORIAL ===== -->
+<section class="editorial">
+    <div class="editorial-label">A note on selection</div>
+    <h2>You need a developer who fits into a real delivery team, not just a resume that looks good.</h2>
+    <p>
+        The core of what Syncsite does is turning out-of-the-box CRM into something that actually works for a specific manufacturing or distribution business. That requires developers who solve problems in context, communicate clearly in writing, and can use AI tools to move faster, not as a crutch, but as a multiplier.
+    </p>
+    <p>
+        <strong>Every candidate here was screened for exactly that.</strong> We started with the technical foundation: C#, .NET, SQL Server, ASP.NET, and the ability to think through integration logic. From there we looked at communication, problem-solving under pressure, and whether they would operate effectively in a mostly async, email-first environment.
+    </p>
+    <div class="editorial-divider"></div>
+    <p>
+        The search focused on Latin America to give you real CST overlap without the coordination friction. <strong>Each candidate can commit to your 8am–5pm schedule and has demonstrated the initiative and discipline to work in a remote-first setup.</strong> Your team stays stable. The work keeps moving.
+    </p>
+</section>
+
+<!-- ===== CANDIDATES ===== -->
+<section class="candidates-section">
+    <div class="candidates-header">
+        <h2>The Shortlist</h2>
+        <p>Four developers. Screened for technical depth, written English, and AI literacy. Presented in no particular order.</p>
+    </div>
+
+    <!-- ===== CANDIDATE 1: AARON ===== -->
+    <div class="candidate-card">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">A</div>
+                    <div>
+                        <div class="card-name">Aaron</div>
+                        <div class="card-title">Software Developer · .NET / C# · LATAM</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-salary">$3,500 – $4,000 / mo</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    Aaron brings hands-on development experience building and customizing software solutions on the Microsoft stack. His background covers the full integration loop: <strong>writing business logic in C# and .NET, working with SQL Server databases, and connecting systems through REST and SOAP web services.</strong> He communicates clearly, works independently, and has already integrated AI tools into his daily coding workflow for documentation, debugging, and code generation.
+                </p>
+                <p class="card-narrative">
+                    He understands that the job isn't just writing code. It's translating a business requirement into something that actually works inside a CRM ecosystem. That framing came through clearly during screening. <strong>He's available to start immediately on a full CST schedule.</strong>
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">C# · .NET Framework/Core</span>
+                    <span class="signal-tag">SQL Server</span>
+                    <span class="signal-tag">ASP.NET</span>
+                    <span class="signal-tag blue">REST / SOAP Web Services</span>
+                    <span class="signal-tag blue">XML / JSON</span>
+                    <span class="signal-tag blue">AI-Literate</span>
+                    <span class="signal-tag gray">CST-Compatible</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">C# · .NET · SQL</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Communication</div>
+                        <div class="stat-value">Strong Written English</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Availability</div>
+                        <div class="stat-value">Immediate · CST</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="card-footer-note">Resume · Video Intro available</span>
+                <div class="cta-group">
+                    <a href="https://drive.google.com/file/d/1cSw3hLDEjLx9lG5v51zu49WFOwBPYLob/view?usp=drive_link" target="_blank" class="btn btn-outline">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        Video Intro
+                    </a>
+                    <a href="https://drive.google.com/file/d/19kU6C_1Po2ZgYcdpajUMWauyWWVH9JLk/view?usp=drive_link" target="_blank" class="btn btn-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        View Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== CANDIDATE 2: CHRYSTIAN ===== -->
+    <div class="candidate-card">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">C</div>
+                    <div>
+                        <div class="card-name">Chrystian</div>
+                        <div class="card-title">Software Developer · .NET / C# · LATAM</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-salary">$3,500 – $4,000 / mo</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    Chrystian has built integrations and customizations on the Microsoft stack in professional environments. His work centers on <strong>C#, .NET, and SQL Server</strong>, with practical experience exposing and consuming web services to move data between systems. He approaches problems analytically: isolate the issue, understand the data flow, build a solution that holds up in production.
+                </p>
+                <p class="card-narrative">
+                    His written communication is precise and professional. He uses AI tooling actively in development tasks, which translates to faster turnaround on documentation, code review, and debugging. <strong>He's a strong fit for an environment where clear email communication replaces most meetings.</strong>
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">C# · .NET Framework/Core</span>
+                    <span class="signal-tag">SQL Server</span>
+                    <span class="signal-tag">ASP.NET</span>
+                    <span class="signal-tag blue">Web Services Integration</span>
+                    <span class="signal-tag blue">JavaScript</span>
+                    <span class="signal-tag blue">AI-Literate</span>
+                    <span class="signal-tag gray">CST-Compatible</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">C# · .NET · SQL</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Communication</div>
+                        <div class="stat-value">Strong Written English</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Availability</div>
+                        <div class="stat-value">Immediate · CST</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="card-footer-note">Resume · Video Intro available</span>
+                <div class="cta-group">
+                    <a href="https://drive.google.com/file/d/1FlvjgFGR5oYZVaU99E5AX6HGl414WY0J/view?ts=69a99d65" target="_blank" class="btn btn-outline">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        Video Intro
+                    </a>
+                    <a href="https://drive.google.com/file/d/1rLnJM5dceRJ9kev609Cr0ErBzs2RdEFC/view?usp=drive_link" target="_blank" class="btn btn-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        View Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== CANDIDATE 3: LUCAS ===== -->
+    <div class="candidate-card">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">L</div>
+                    <div>
+                        <div class="card-name">Lucas</div>
+                        <div class="card-title">Software Developer · .NET / C# · LATAM</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-salary">$3,500 – $4,000 / mo</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    Lucas is a developer with a solid foundation in the Microsoft stack, combining <strong>C#, .NET, and SQL Server</strong> with the systems thinking needed to build integrations that connect CRM workflows to ERP data and third-party tools. He approaches new codebases methodically: read the data model, trace the business logic, then build cleanly on top of it.
+                </p>
+                <p class="card-narrative">
+                    He's comfortable working through complex requirements over email, turning ambiguous requests into structured technical tasks. <strong>AI tools are part of his daily workflow</strong>, which he uses to accelerate documentation and shorten debugging cycles. He's well-positioned for a role where the scope grows steadily over time.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">C# · .NET Framework/Core</span>
+                    <span class="signal-tag">SQL Server</span>
+                    <span class="signal-tag">ASP.NET</span>
+                    <span class="signal-tag blue">REST / SOAP Services</span>
+                    <span class="signal-tag blue">JavaScript</span>
+                    <span class="signal-tag blue">AI-Literate</span>
+                    <span class="signal-tag gray">CST-Compatible</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">C# · .NET · SQL</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Communication</div>
+                        <div class="stat-value">Strong Written English</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Availability</div>
+                        <div class="stat-value">Immediate · CST</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="card-footer-note">Resume available · Video Intro not submitted</span>
+                <div class="cta-group">
+                    <a href="https://drive.google.com/file/d/1_nx_IDGZhDCxJ9-PmcmHW_vVm1w44lAr/view?usp=drive_link" target="_blank" class="btn btn-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        View Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== CANDIDATE 4: KELLY ===== -->
+    <div class="candidate-card">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">K</div>
+                    <div>
+                        <div class="card-name">Kelly</div>
+                        <div class="card-title">Software Developer · .NET / C# · LATAM</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-salary">$3,500 – $4,000 / mo</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    Kelly brings a strong technical profile with direct experience on the Microsoft development stack, focusing on <strong>C#, .NET, and SQL Server</strong> with integration work across REST and SOAP interfaces. She thinks in systems: how data flows, where it breaks, and how to build reliable bridges between platforms without accumulating technical debt.
+                </p>
+                <p class="card-narrative">
+                    Her communication in English is professional and clear. She uses AI tools practically to shorten development cycles, not to replace engineering judgment. <strong>She's disciplined about async, email-heavy workflows</strong> and has demonstrated she can manage her own work without close supervision. A strong long-term candidate for a stable team.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">C# · .NET Framework/Core</span>
+                    <span class="signal-tag">SQL Server</span>
+                    <span class="signal-tag">ASP.NET</span>
+                    <span class="signal-tag blue">Web Services Integration</span>
+                    <span class="signal-tag blue">XML / JSON</span>
+                    <span class="signal-tag blue">AI-Literate</span>
+                    <span class="signal-tag gray">CST-Compatible</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">C# · .NET · SQL</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Communication</div>
+                        <div class="stat-value">Strong Written English</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Availability</div>
+                        <div class="stat-value">Immediate · CST</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="card-footer-note">Resume · Video Intro available</span>
+                <div class="cta-group">
+                    <a href="https://drive.google.com/file/d/16lK6JkAs5iUkzM79OGseq2j48cHddoPz/view" target="_blank" class="btn btn-outline">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        Video Intro
+                    </a>
+                    <a href="https://drive.google.com/file/d/10MJE3D_QzaHncw107S43ExuPbeVFWOF9/view?usp=drive_link" target="_blank" class="btn btn-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        View Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- ===== RECRUITER ===== -->
+<section class="recruiter-section">
+    <div class="recruiter-inner">
+        <h2>Your point of contact</h2>
+        <p class="recruiter-subtitle">Questions about a candidate? Ready to move one to the technical round? Reach out directly.</p>
+        <div class="recruiter-card">
+            <div class="recruiter-avatar">MA</div>
+            <div>
+                <div class="recruiter-name">Miguel Agudelo</div>
+                <div class="recruiter-role">Talent Advisor · Sagan White Glove · LATAM Specialist</div>
+                <div class="recruiter-contact">
+                    <a href="mailto:miguel.a@getsagan.com">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        miguel.a@getsagan.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SAGAN STRIP ===== -->
+<div class="sagan-strip">
+    <div class="sagan-inner">
+        <div class="sagan-left">
+            <div>
+                <div class="sagan-logo">Sagan White Glove</div>
+                <div class="sagan-desc">We source, screen, and present pre-vetted global talent for companies that need a reliable hiring partner, not a job board. Every candidate you see has been interviewed by our team before reaching you.</div>
+            </div>
+        </div>
+        <div class="sagan-stats">
+            <div class="sagan-stat">
+                <div class="sagan-stat-value">2,000+</div>
+                <div class="sagan-stat-label">Placements</div>
+            </div>
+            <div class="sagan-stat">
+                <div class="sagan-stat-value">30+</div>
+                <div class="sagan-stat-label">Countries</div>
+            </div>
+            <div class="sagan-stat">
+                <div class="sagan-stat-value">20K+</div>
+                <div class="sagan-stat-label">Apps/Month</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <p>Prepared by Sagan White Glove for Syncsite · March 2026 · <a href="https://getsagan.com" target="_blank">getsagan.com</a></p>
+</footer>
+
+</body>
+</html>
