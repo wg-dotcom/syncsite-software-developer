@@ -54,22 +54,18 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: -120px;
-            right: -80px;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+            top: -120px; right: -80px;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
             pointer-events: none;
         }
 
         .hero::after {
             content: '';
             position: absolute;
-            bottom: -80px;
-            left: -60px;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+            bottom: -80px; left: -60px;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -88,25 +84,9 @@
             margin-bottom: 40px;
         }
 
-        .hero-brand-syncsite {
-            font-size: 18px;
-            font-weight: 700;
-            letter-spacing: -0.3px;
-            color: var(--sync-white);
-        }
-
-        .hero-brand-divider {
-            width: 1px;
-            height: 20px;
-            background: rgba(255,255,255,0.2);
-        }
-
-        .hero-brand-sagan {
-            font-size: 13px;
-            color: rgba(255,255,255,0.4);
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
+        .hero-brand-syncsite { font-size: 18px; font-weight: 700; letter-spacing: -0.3px; color: var(--sync-white); }
+        .hero-brand-divider { width: 1px; height: 20px; background: rgba(255,255,255,0.2); }
+        .hero-brand-sagan { font-size: 13px; color: rgba(255,255,255,0.4); font-weight: 500; letter-spacing: 0.5px; }
 
         .hero-badge {
             display: inline-flex;
@@ -117,8 +97,8 @@
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: var(--sync-blue-lt);
-            background: rgba(59, 130, 246, 0.12);
-            border: 1px solid rgba(59, 130, 246, 0.25);
+            background: rgba(59,130,246,0.12);
+            border: 1px solid rgba(59,130,246,0.25);
             padding: 6px 14px;
             border-radius: 100px;
             margin-bottom: 28px;
@@ -126,8 +106,7 @@
 
         .hero-badge::before {
             content: '';
-            width: 6px;
-            height: 6px;
+            width: 6px; height: 6px;
             background: var(--sync-blue-lt);
             border-radius: 50%;
         }
@@ -141,9 +120,7 @@
             max-width: 700px;
         }
 
-        .hero h1 strong {
-            color: var(--sync-blue-lt);
-        }
+        .hero h1 strong { color: var(--sync-blue-lt); }
 
         .hero-subtitle {
             font-size: 17px;
@@ -175,20 +152,97 @@
 
         .hero-meta-label {
             display: block;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+            font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
             color: rgba(255,255,255,0.3);
             margin-bottom: 6px;
         }
 
         .hero-meta-value {
             display: block;
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 14px; font-weight: 600;
             color: var(--sync-white);
         }
+
+        /* ===== BATCH TABS ===== */
+        .batch-tabs {
+            background: var(--sync-white);
+            border-bottom: 2px solid var(--sync-gray-lt);
+            padding: 0 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .batch-tabs-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .tab-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--sync-gray);
+            border: none;
+            background: none;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover:not(.active) { color: var(--sync-text); }
+
+        .tab-btn.active {
+            color: var(--sync-blue);
+            border-bottom-color: var(--sync-blue);
+        }
+
+        .tab-batch-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px; height: 22px;
+            background: var(--sync-gray-lt);
+            color: var(--sync-gray);
+            border-radius: 50%;
+            font-size: 11px;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active .tab-batch-num {
+            background: var(--sync-sky2);
+            color: var(--sync-blue);
+        }
+
+        .tab-date {
+            font-size: 11px;
+            font-weight: 400;
+            color: var(--sync-gray);
+            opacity: 0.7;
+        }
+
+        .tab-btn.active .tab-date { opacity: 1; color: var(--sync-blue); }
+
+        .tab-divider {
+            width: 1px;
+            height: 28px;
+            background: var(--sync-gray-lt);
+            margin: 0 8px;
+        }
+
+        /* ===== BATCH CONTENT ===== */
+        .batch-content { display: none; }
+        .batch-content.active { display: block; }
 
         /* ===== EDITORIAL ===== */
         .editorial {
@@ -198,38 +252,27 @@
         }
 
         .editorial-label {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
             color: var(--sync-blue);
             margin-bottom: 20px;
         }
 
         .editorial h2 {
-            font-size: 30px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            line-height: 1.3;
+            font-size: 30px; font-weight: 700; letter-spacing: -0.5px; line-height: 1.3;
             margin-bottom: 28px;
             color: var(--sync-text);
         }
 
         .editorial p {
-            font-size: 16px;
-            line-height: 1.85;
+            font-size: 16px; line-height: 1.85;
             color: var(--sync-gray);
             margin-bottom: 20px;
         }
 
-        .editorial p strong {
-            color: var(--sync-text);
-            font-weight: 600;
-        }
+        .editorial p strong { color: var(--sync-text); font-weight: 600; }
 
         .editorial-divider {
-            width: 40px;
-            height: 3px;
+            width: 40px; height: 3px;
             background: var(--sync-blue);
             border-radius: 2px;
             margin: 36px 0;
@@ -249,17 +292,12 @@
         }
 
         .candidates-header h2 {
-            font-size: 32px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
+            font-size: 32px; font-weight: 700; letter-spacing: -0.5px;
             margin-bottom: 10px;
             color: var(--sync-text);
         }
 
-        .candidates-header p {
-            font-size: 16px;
-            color: var(--sync-gray);
-        }
+        .candidates-header p { font-size: 16px; color: var(--sync-gray); }
 
         .candidate-card {
             max-width: 1100px;
@@ -288,39 +326,37 @@
             align-items: flex-start;
         }
 
-        .card-identity {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
+        .card-identity { display: flex; align-items: center; gap: 20px; }
 
         .card-avatar {
-            width: 56px;
-            height: 56px;
+            width: 56px; height: 56px;
             border-radius: 50%;
-            background: rgba(59, 130, 246, 0.15);
-            border: 2px solid rgba(59, 130, 246, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 19px;
-            font-weight: 700;
+            background: rgba(59,130,246,0.15);
+            border: 2px solid rgba(59,130,246,0.3);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 19px; font-weight: 700;
             color: var(--sync-blue-lt);
             flex-shrink: 0;
         }
 
-        .card-name {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--sync-white);
-            letter-spacing: -0.3px;
+        .card-name { font-size: 22px; font-weight: 700; color: var(--sync-white); letter-spacing: -0.3px; }
+        .card-title { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 3px; }
+
+        /* ===== TAP BADGE ===== */
+        .tap-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+            color: #78350F;
+            background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+            border: 1px solid #F59E0B;
+            padding: 3px 10px;
+            border-radius: 100px;
+            margin-top: 6px;
         }
 
-        .card-title {
-            font-size: 13px;
-            color: rgba(255,255,255,0.45);
-            margin-top: 3px;
-        }
+        .tap-badge svg { width: 11px; height: 11px; fill: #F59E0B; }
 
         .card-meta-right {
             display: flex;
@@ -330,61 +366,36 @@
         }
 
         .card-salary {
-            font-size: 13px;
-            font-weight: 600;
+            font-size: 13px; font-weight: 600;
             color: var(--sync-blue-lt);
-            background: rgba(59, 130, 246, 0.12);
-            border: 1px solid rgba(59, 130, 246, 0.25);
+            background: rgba(59,130,246,0.12);
+            border: 1px solid rgba(59,130,246,0.25);
             padding: 4px 14px;
             border-radius: 100px;
         }
 
-        .card-body {
-            padding: 40px 44px;
-        }
+        .card-body { padding: 40px 44px; }
 
         .card-narrative {
-            font-size: 15.5px;
-            line-height: 1.85;
+            font-size: 15.5px; line-height: 1.85;
             color: var(--sync-gray);
             margin-bottom: 32px;
         }
 
-        .card-narrative strong {
-            color: var(--sync-text);
-            font-weight: 600;
-        }
+        .card-narrative strong { color: var(--sync-text); font-weight: 600; }
 
         /* ===== SIGNAL TAGS ===== */
-        .signal-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 32px;
-        }
+        .signal-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
 
         .signal-tag {
-            font-size: 11.5px;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-            padding: 5px 12px;
-            border-radius: 6px;
-            background: #F0FDF4;
-            color: #166534;
-            border: 1px solid #BBF7D0;
+            font-size: 11.5px; font-weight: 600; letter-spacing: 0.3px;
+            padding: 5px 12px; border-radius: 6px;
+            background: #F0FDF4; color: #166534; border: 1px solid #BBF7D0;
         }
 
-        .signal-tag.blue {
-            background: var(--sync-sky);
-            color: #1D4ED8;
-            border-color: var(--sync-sky2);
-        }
-
-        .signal-tag.gray {
-            background: #F8FAFC;
-            color: #374151;
-            border-color: var(--sync-gray-lt);
-        }
+        .signal-tag.blue { background: var(--sync-sky); color: #1D4ED8; border-color: var(--sync-sky2); }
+        .signal-tag.gray { background: #F8FAFC; color: #374151; border-color: var(--sync-gray-lt); }
+        .signal-tag.gold { background: #FFFBEB; color: #92400E; border-color: #FDE68A; }
 
         /* ===== STATS ===== */
         .card-stats {
@@ -394,25 +405,39 @@
             margin-bottom: 32px;
         }
 
-        .stat-box {
-            background: var(--sync-light);
-            border-radius: 10px;
-            padding: 16px 20px;
-        }
+        .stat-box { background: var(--sync-light); border-radius: 10px; padding: 16px 20px; }
 
         .stat-label {
-            font-size: 10.5px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+            font-size: 10.5px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
             color: var(--sync-gray);
             margin-bottom: 6px;
         }
 
-        .stat-value {
-            font-size: 15px;
-            font-weight: 700;
-            color: var(--sync-text);
+        .stat-value { font-size: 15px; font-weight: 700; color: var(--sync-text); }
+
+        /* ===== RECRUITER NOTES ===== */
+        .recruiter-notes {
+            background: #FFFBEB;
+            border: 1px solid #FDE68A;
+            border-left: 4px solid #F59E0B;
+            border-radius: 10px;
+            padding: 20px 24px;
+        }
+
+        .recruiter-notes-label {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+            color: #92400E;
+            margin-bottom: 10px;
+        }
+
+        .recruiter-notes-label svg { width: 13px; height: 13px; flex-shrink: 0; color: #D97706; }
+
+        .recruiter-notes-text {
+            font-size: 14px; line-height: 1.75;
+            color: #78350F;
         }
 
         /* ===== CTA BUTTONS ===== */
@@ -425,23 +450,15 @@
             gap: 16px;
         }
 
-        .card-footer-note {
-            font-size: 13px;
-            color: var(--sync-gray);
-        }
+        .card-footer-note { font-size: 13px; color: var(--sync-gray); }
 
-        .cta-group {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
+        .cta-group { display: flex; gap: 10px; align-items: center; }
 
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 7px;
-            font-size: 13px;
-            font-weight: 600;
+            font-size: 13px; font-weight: 600;
             text-decoration: none;
             padding: 9px 18px;
             border-radius: 8px;
@@ -449,50 +466,115 @@
             white-space: nowrap;
         }
 
-        .btn-primary {
-            background: var(--sync-blue);
-            color: var(--sync-white);
-            border: 1.5px solid var(--sync-blue);
+        .btn-primary { background: var(--sync-blue); color: var(--sync-white); border: 1.5px solid var(--sync-blue); }
+        .btn-primary:hover { background: #1d4ed8; border-color: #1d4ed8; }
+
+        .btn-outline { background: transparent; color: var(--sync-text); border: 1.5px solid var(--sync-gray-lt); }
+        .btn-outline:hover { border-color: var(--sync-blue); color: var(--sync-blue); background: var(--sync-sky); }
+
+        .btn-tap {
+            background: linear-gradient(135deg, #F59E0B, #D97706);
+            color: white;
+            border: 1.5px solid #D97706;
         }
 
-        .btn-primary:hover {
-            background: #1d4ed8;
-            border-color: #1d4ed8;
-        }
+        .btn-tap:hover { background: linear-gradient(135deg, #D97706, #B45309); border-color: #B45309; }
 
-        .btn-outline {
-            background: transparent;
-            color: var(--sync-text);
-            border: 1.5px solid var(--sync-gray-lt);
-        }
+        .btn svg { width: 13px; height: 13px; flex-shrink: 0; }
 
-        .btn-outline:hover {
-            border-color: var(--sync-blue);
-            color: var(--sync-blue);
-            background: var(--sync-sky);
-        }
-
-        .btn svg {
-            width: 13px;
-            height: 13px;
-            flex-shrink: 0;
-        }
-
-        /* ===== NO VIDEO STATE ===== */
         .no-video {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
+            display: inline-flex; align-items: center; gap: 7px;
             font-size: 12.5px;
-            color: rgba(100, 116, 139, 0.6);
+            color: rgba(100,116,139,0.6);
             font-style: italic;
         }
 
-        /* ===== RECRUITER ===== */
-        .recruiter-section {
+        /* ===== COMPARISON TABLE ===== */
+        .comparison-section {
             background: var(--sync-white);
-            padding: 80px 0;
+            padding: 72px 0;
+            border-top: 1px solid var(--sync-gray-lt);
         }
+
+        .comparison-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .comparison-inner h2 {
+            font-size: 26px; font-weight: 700; letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            color: var(--sync-text);
+        }
+
+        .comparison-inner .section-sub {
+            font-size: 14px;
+            color: var(--sync-gray);
+            margin-bottom: 36px;
+        }
+
+        .comp-table-wrap { overflow-x: auto; }
+
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13.5px;
+        }
+
+        .comp-table thead tr th {
+            background: var(--sync-navy);
+            color: var(--sync-white);
+            font-size: 13px;
+            font-weight: 700;
+            padding: 14px 20px;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .comp-table thead tr th:first-child {
+            background: var(--sync-navy3);
+            width: 180px;
+        }
+
+        .comp-table tbody tr:nth-child(even) td { background: var(--sync-light); }
+        .comp-table tbody tr:hover td { background: var(--sync-sky); }
+
+        .comp-table tbody td {
+            padding: 13px 20px;
+            color: var(--sync-text2);
+            border-bottom: 1px solid var(--sync-gray-lt);
+            vertical-align: top;
+        }
+
+        .comp-table tbody td:first-child {
+            font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+            color: var(--sync-gray);
+            white-space: nowrap;
+            background: #F8FAFC;
+        }
+
+        .score-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 13px; font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 100px;
+        }
+
+        .score-high { background: #F0FDF4; color: #166534; border: 1px solid #BBF7D0; }
+        .score-mid  { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
+        .score-low  { background: #F8FAFC; color: #374151; border: 1px solid #E2E8F0; }
+
+        .tz-good { color: #16A34A; font-weight: 600; }
+        .tz-ok   { color: #D97706; font-weight: 600; }
+
+        .check { color: #16A34A; font-weight: 700; }
+        .dash  { color: #CBD5E1; }
+
+        /* ===== RECRUITER SECTION ===== */
+        .recruiter-section { background: var(--sync-white); padding: 80px 0; }
 
         .recruiter-inner {
             max-width: 1100px;
@@ -500,18 +582,9 @@
             padding: 0 40px;
         }
 
-        .recruiter-section h2 {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 8px;
-        }
+        .recruiter-section h2 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
 
-        .recruiter-subtitle {
-            font-size: 16px;
-            color: var(--sync-gray);
-            margin-bottom: 48px;
-        }
+        .recruiter-subtitle { font-size: 16px; color: var(--sync-gray); margin-bottom: 48px; }
 
         .recruiter-card {
             display: flex;
@@ -524,64 +597,31 @@
         }
 
         .recruiter-avatar {
-            width: 88px;
-            height: 88px;
+            width: 88px; height: 88px;
             border-radius: 50%;
             overflow: hidden;
-            border: 3px solid rgba(59, 130, 246, 0.3);
+            border: 3px solid rgba(59,130,246,0.3);
             flex-shrink: 0;
         }
 
-        .recruiter-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .recruiter-avatar img { width: 100%; height: 100%; object-fit: cover; }
 
-        .recruiter-name {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--sync-white);
-            margin-bottom: 2px;
-        }
+        .recruiter-name { font-size: 20px; font-weight: 700; color: var(--sync-white); margin-bottom: 2px; }
+        .recruiter-role { font-size: 13px; color: rgba(255,255,255,0.45); margin-bottom: 14px; }
 
-        .recruiter-role {
-            font-size: 13px;
-            color: rgba(255,255,255,0.45);
-            margin-bottom: 14px;
-        }
+        .recruiter-bio { font-size: 14.5px; line-height: 1.75; color: rgba(255,255,255,0.55); margin-bottom: 18px; }
+        .recruiter-bio strong { color: rgba(255,255,255,0.8); font-weight: 600; }
 
-        .recruiter-bio {
-            font-size: 14.5px;
-            line-height: 1.75;
-            color: rgba(255,255,255,0.55);
-            margin-bottom: 18px;
-        }
-
-        .recruiter-bio strong {
-            color: rgba(255,255,255,0.8);
-            font-weight: 600;
-        }
-
-        .recruiter-contact {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px 24px;
-        }
+        .recruiter-contact { display: flex; flex-wrap: wrap; gap: 12px 24px; }
 
         .recruiter-contact a {
-            font-size: 13.5px;
-            font-weight: 500;
+            font-size: 13.5px; font-weight: 500;
             color: var(--sync-blue-lt);
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 7px;
+            display: flex; align-items: center; gap: 7px;
         }
 
-        .recruiter-contact a:hover {
-            color: #93c5fd;
-        }
+        .recruiter-contact a:hover { color: #93c5fd; }
 
         /* ===== SAGAN STRIP ===== */
         .sagan-strip {
@@ -599,48 +639,17 @@
             gap: 32px;
         }
 
-        .sagan-left {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
+        .sagan-logo { font-size: 17px; font-weight: 800; color: var(--sync-text); letter-spacing: -0.5px; }
 
-        .sagan-logo {
-            font-size: 17px;
-            font-weight: 800;
-            color: var(--sync-text);
-            letter-spacing: -0.5px;
-        }
+        .sagan-desc { font-size: 13px; color: var(--sync-gray); max-width: 420px; line-height: 1.6; }
 
-        .sagan-desc {
-            font-size: 13px;
-            color: var(--sync-gray);
-            max-width: 420px;
-            line-height: 1.6;
-        }
+        .sagan-stats { display: flex; gap: 32px; }
 
-        .sagan-stats {
-            display: flex;
-            gap: 32px;
-        }
+        .sagan-stat { text-align: center; }
 
-        .sagan-stat {
-            text-align: center;
-        }
+        .sagan-stat-value { font-size: 22px; font-weight: 800; color: var(--sync-text); letter-spacing: -0.5px; }
 
-        .sagan-stat-value {
-            font-size: 22px;
-            font-weight: 800;
-            color: var(--sync-text);
-            letter-spacing: -0.5px;
-        }
-
-        .sagan-stat-label {
-            font-size: 11px;
-            color: var(--sync-gray);
-            font-weight: 500;
-            margin-top: 2px;
-        }
+        .sagan-stat-label { font-size: 11px; color: var(--sync-gray); font-weight: 500; margin-top: 2px; }
 
         /* ===== FOOTER ===== */
         .footer {
@@ -651,16 +660,7 @@
             font-size: 12.5px;
         }
 
-        .footer a {
-            color: rgba(255,255,255,0.4);
-            text-decoration: none;
-        }
-
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(16px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
+        .footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
@@ -674,11 +674,13 @@
             .card-footer { flex-direction: column; align-items: flex-start; padding: 18px 28px; }
             .card-stats { grid-template-columns: repeat(2, 1fr); }
             .hero-inner, .editorial, .recruiter-inner { padding-left: 24px; padding-right: 24px; }
-            .candidate-card, .candidates-header { padding: 0 16px; }
+            .candidate-card, .candidates-header, .comparison-inner { padding: 0 16px; }
             .recruiter-card { flex-direction: column; align-items: flex-start; padding: 28px 32px; }
             .sagan-inner { flex-direction: column; }
             .sagan-stats { justify-content: center; }
             .cta-group { flex-wrap: wrap; }
+            .batch-tabs { padding: 0 16px; }
+            .tab-date { display: none; }
         }
     </style>
 </head>
@@ -694,17 +696,17 @@
             <span class="hero-brand-divider"></span>
             <span class="hero-brand-sagan">Sagan White Glove</span>
         </div>
-        <div class="hero-badge">Software Developer Selection · March 2026</div>
+        <div class="hero-badge">Software Developer Selection · 2026</div>
         <h1>Your next<br><strong>Software Developer</strong><br>is ready.</h1>
-        <p class="hero-subtitle">Four developers. All screened for .NET and C# depth, written English fluency, and practical AI literacy. Available immediately to work CST hours and integrate into your delivery team.</p>
+        <p class="hero-subtitle">Seven developers across two batches. All screened for .NET and C# depth, written English fluency, and practical AI literacy. Available to work CST hours and integrate directly into your delivery team.</p>
         <div class="hero-meta">
             <div class="hero-meta-item">
                 <span class="hero-meta-label">Role</span>
                 <span class="hero-meta-value">Software Developer</span>
             </div>
             <div class="hero-meta-item">
-                <span class="hero-meta-label">Candidates</span>
-                <span class="hero-meta-value">4 Selected</span>
+                <span class="hero-meta-label">Total Presented</span>
+                <span class="hero-meta-value">7 across 2 batches</span>
             </div>
             <div class="hero-meta-item">
                 <span class="hero-meta-label">Non-Negotiables</span>
@@ -722,276 +724,728 @@
     </div>
 </header>
 
-<!-- ===== EDITORIAL ===== -->
-<section class="editorial">
-    <div class="editorial-label">A note on selection</div>
-    <h2>You need a developer who fits into a real delivery team, not just a resume that looks good.</h2>
-    <p>
-        The core of what Syncsite does is turning out-of-the-box CRM into something that actually works for a specific manufacturing or distribution business. That requires developers who solve problems in context, communicate clearly in writing, and can use AI tools to move faster, not as a crutch, but as a multiplier.
-    </p>
-    <p>
-        <strong>Every candidate here was screened for exactly that.</strong> We started with the technical foundation: C#, .NET, SQL Server, ASP.NET, and the ability to think through integration logic. From there we looked at communication, problem-solving under pressure, and whether they would operate effectively in a mostly async, email-first environment.
-    </p>
-    <div class="editorial-divider"></div>
-    <p>
-        The search focused on Latin America to give you real CST overlap without the coordination friction. <strong>Each candidate can commit to your 8am–5pm schedule and has demonstrated the initiative and discipline to work in a remote-first setup.</strong> Your team stays stable. The work keeps moving.
-    </p>
-</section>
-
-<!-- ===== CANDIDATES ===== -->
-<section class="candidates-section">
-    <div class="candidates-header">
-        <h2>The Shortlist</h2>
-        <p>Four developers. Screened for technical depth, written English, and AI literacy. Presented in no particular order.</p>
+<!-- ===== BATCH TABS ===== -->
+<nav class="batch-tabs" id="batch-nav">
+    <div class="batch-tabs-inner">
+        <button class="tab-btn active" data-batch="1" onclick="switchBatch(1)">
+            <span class="tab-batch-num">1</span>
+            Batch 1
+            <span class="tab-date">· March 17, 2026</span>
+        </button>
+        <div class="tab-divider"></div>
+        <button class="tab-btn" data-batch="2" onclick="switchBatch(2)">
+            <span class="tab-batch-num">2</span>
+            Batch 2
+            <span class="tab-date">· March 26, 2026</span>
+        </button>
     </div>
+</nav>
 
-    <!-- ===== CANDIDATE 1: AARON ===== -->
-    <div class="candidate-card">
-        <div class="card">
-            <div class="card-top">
-                <div class="card-identity">
-                    <div class="card-avatar">A</div>
-                    <div>
-                        <div class="card-name">Aaron</div>
-                        <div class="card-title">Software Developer · .NET / C# · LATAM</div>
+<!-- ========================================================= -->
+<!-- =================== BATCH 1 CONTENT ==================== -->
+<!-- ========================================================= -->
+<div class="batch-content active" id="batch-1">
+
+    <!-- ===== EDITORIAL ===== -->
+    <section class="editorial">
+        <div class="editorial-label">Batch 1 · A note on selection</div>
+        <h2>You need a developer who fits into a real delivery team, not just a resume that looks good.</h2>
+        <p>
+            The core of what Syncsite does is turning out-of-the-box CRM into something that actually works for a specific manufacturing or distribution business. That requires developers who solve problems in context, communicate clearly in writing, and can use AI tools to move faster — not as a crutch, but as a multiplier.
+        </p>
+        <p>
+            <strong>Every candidate here was screened for exactly that.</strong> We started with the technical foundation: C#, .NET, SQL Server, ASP.NET, and the ability to think through integration logic. From there we looked at communication, problem-solving under pressure, and whether they would operate effectively in a mostly async, email-first environment.
+        </p>
+        <div class="editorial-divider"></div>
+        <p>
+            The search focused on Latin America to give you real CST overlap without the coordination friction. <strong>Each candidate can commit to your 8am–5pm schedule and has demonstrated the initiative and discipline to work in a remote-first setup.</strong> Your team stays stable. The work keeps moving.
+        </p>
+    </section>
+
+    <!-- ===== CANDIDATES ===== -->
+    <section class="candidates-section">
+        <div class="candidates-header">
+            <h2>Batch 1 Shortlist</h2>
+            <p>Four developers. Screened for technical depth, written English, and AI literacy. Presented in no particular order.</p>
+        </div>
+
+        <!-- AARON -->
+        <div class="candidate-card">
+            <div class="card">
+                <div class="card-top">
+                    <div class="card-identity">
+                        <div class="card-avatar">A</div>
+                        <div>
+                            <div class="card-name">Aaron</div>
+                            <div class="card-title">Software Developer · .NET / C# · Costa Rica</div>
+                        </div>
+                    </div>
+                    <div class="card-meta-right">
+                        <span class="card-salary">Within Budget Range</span>
                     </div>
                 </div>
-                <div class="card-meta-right">
-                    <span class="card-salary">$3,500 – $4,000 / mo</span>
-                </div>
-            </div>
-            <div class="card-body">
-                <p class="card-narrative">
-                    Aaron brings hands-on development experience building and customizing software solutions on the Microsoft stack. His background covers the full integration loop: <strong>writing business logic in C# and .NET, working with SQL Server databases, and connecting systems through REST and SOAP web services.</strong> He communicates clearly, works independently, and has already integrated AI tools into his daily coding workflow for documentation, debugging, and code generation.
-                </p>
-                <p class="card-narrative">
-                    He understands that the job isn't just writing code. It's translating a business requirement into something that actually works inside a CRM ecosystem. That framing came through clearly during screening. <strong>He's available to start immediately on a full CST schedule.</strong>
-                </p>
-                <div class="signal-row">
-                    <span class="signal-tag">C# · .NET Framework/Core</span>
-                    <span class="signal-tag">SQL Server</span>
-                    <span class="signal-tag">ASP.NET</span>
-                    <span class="signal-tag blue">REST / SOAP Web Services</span>
-                    <span class="signal-tag blue">XML / JSON</span>
-                    <span class="signal-tag blue">AI-Literate</span>
-                    <span class="signal-tag gray">CST-Compatible</span>
-                </div>
-                <div class="card-stats">
-                    <div class="stat-box">
-                        <div class="stat-label">Core Stack</div>
-                        <div class="stat-value">C# · .NET · SQL</div>
+                <div class="card-body">
+                    <p class="card-narrative">
+                        Aaron brings hands-on development experience building and customizing software solutions on the Microsoft stack. His background covers the full integration loop: <strong>writing business logic in C# and .NET Core, working with SQL Server databases, and connecting systems through REST web services.</strong> He's at Stratech Software right now doing this exact work — C# APIs, Oracle, PL/SQL, clean architecture.
+                    </p>
+                    <p class="card-narrative">
+                        He understands that the job isn't just writing code. It's translating a business requirement into something that actually works inside a CRM ecosystem. That framing came through clearly during screening. <strong>He's available to start immediately on a full CST schedule.</strong> Most notable result: built an automation at UCR that cut manual reporting time by 90%.
+                    </p>
+                    <div class="signal-row">
+                        <span class="signal-tag">C# · .NET Core</span>
+                        <span class="signal-tag">SQL Server · Oracle</span>
+                        <span class="signal-tag">ASP.NET</span>
+                        <span class="signal-tag blue">REST API Integration</span>
+                        <span class="signal-tag blue">Clean Architecture</span>
+                        <span class="signal-tag gray">CST ✓</span>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-label">Communication</div>
-                        <div class="stat-value">Strong Written English</div>
+                    <div class="card-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">Core Stack</div>
+                            <div class="stat-value">C# · .NET · SQL</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Experience</div>
+                            <div class="stat-value">3 years</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Availability</div>
+                            <div class="stat-value">Immediate · CST</div>
+                        </div>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-label">Availability</div>
-                        <div class="stat-value">Immediate · CST</div>
+                    <div class="recruiter-notes">
+                        <div class="recruiter-notes-label">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                            Recruiter Notes
+                        </div>
+                        <p class="recruiter-notes-text">Aaron is the most technically focused candidate in this batch on the .NET Core and SQL side. His work at Stratech Software puts him squarely in the zone Syncsite needs — building REST APIs in C#, integrating external services, handling structured JSON flows. The 90% reporting time reduction at UCR shows the automation mindset that translates directly into integration work. Three years of total experience is on the lower end, but his communication is clear and direct, and his architecture thinking is advanced for his level. Best fit for a team that can provide some technical mentorship early on. Strong long-term upside.</p>
                     </div>
                 </div>
-            </div>
-            <div class="card-footer">
-                <span class="card-footer-note">Resume · Video Intro available</span>
-                <div class="cta-group">
-                    <a href="https://drive.google.com/file/d/1cSw3hLDEjLx9lG5v51zu49WFOwBPYLob/view?usp=drive_link" target="_blank" class="btn btn-outline">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                        Video Intro
-                    </a>
-                    <a href="https://drive.google.com/file/d/19kU6C_1Po2ZgYcdpajUMWauyWWVH9JLk/view?usp=drive_link" target="_blank" class="btn btn-primary">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                        View Resume
-                    </a>
+                <div class="card-footer">
+                    <span class="card-footer-note">Resume · Video Intro available</span>
+                    <div class="cta-group">
+                        <a href="https://drive.google.com/file/d/1cSw3hLDEjLx9lG5v51zu49WFOwBPYLob/view?usp=drive_link" target="_blank" class="btn btn-outline">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            Video Intro
+                        </a>
+                        <a href="https://drive.google.com/file/d/19kU6C_1Po2ZgYcdpajUMWauyWWVH9JLk/view?usp=drive_link" target="_blank" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            View Resume
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- ===== CANDIDATE 2: CHRYSTIAN ===== -->
-    <div class="candidate-card">
-        <div class="card">
-            <div class="card-top">
-                <div class="card-identity">
-                    <div class="card-avatar">C</div>
-                    <div>
-                        <div class="card-name">Chrystian</div>
-                        <div class="card-title">Software Developer · .NET / C# · LATAM</div>
+        <!-- CHRYSTIAN -->
+        <div class="candidate-card">
+            <div class="card">
+                <div class="card-top">
+                    <div class="card-identity">
+                        <div class="card-avatar">C</div>
+                        <div>
+                            <div class="card-name">Chrystian</div>
+                            <div class="card-title">Software Developer · .NET / C# · Mexico</div>
+                        </div>
+                    </div>
+                    <div class="card-meta-right">
+                        <span class="card-salary">Within Budget Range</span>
                     </div>
                 </div>
-                <div class="card-meta-right">
-                    <span class="card-salary">$3,500 – $4,000 / mo</span>
-                </div>
-            </div>
-            <div class="card-body">
-                <p class="card-narrative">
-                    Chrystian has built integrations and customizations on the Microsoft stack in professional environments. His work centers on <strong>C#, .NET, and SQL Server</strong>, with practical experience exposing and consuming web services to move data between systems. He approaches problems analytically: isolate the issue, understand the data flow, build a solution that holds up in production.
-                </p>
-                <p class="card-narrative">
-                    His written communication is precise and professional. He uses AI tooling actively in development tasks, which translates to faster turnaround on documentation, code review, and debugging. <strong>He's a strong fit for an environment where clear email communication replaces most meetings.</strong>
-                </p>
-                <div class="signal-row">
-                    <span class="signal-tag">C# · .NET Framework/Core</span>
-                    <span class="signal-tag">SQL Server</span>
-                    <span class="signal-tag">ASP.NET</span>
-                    <span class="signal-tag blue">Web Services Integration</span>
-                    <span class="signal-tag blue">JavaScript</span>
-                    <span class="signal-tag blue">AI-Literate</span>
-                    <span class="signal-tag gray">CST-Compatible</span>
-                </div>
-                <div class="card-stats">
-                    <div class="stat-box">
-                        <div class="stat-label">Core Stack</div>
-                        <div class="stat-value">C# · .NET · SQL</div>
+                <div class="card-body">
+                    <p class="card-narrative">
+                        Chrystian has 17 years of professional experience built entirely on the Microsoft stack — from ASP.NET WebForms to .NET Core 8. His work centers on <strong>C#, .NET, and SQL Server</strong>, with practical experience building RESTful services, WCF endpoints, and both legacy and modern web APIs. He's done sprint planning, backlog estimation, and Scrum ceremonies for years, which means he slots cleanly into a structured delivery team.
+                    </p>
+                    <p class="card-narrative">
+                        His written communication is precise. He uses AI tooling in development tasks, which translates to faster turnaround on documentation, code review, and debugging. <strong>CST timezone, Mexico-based, available immediately.</strong>
+                    </p>
+                    <div class="signal-row">
+                        <span class="signal-tag">C# · .NET Framework/Core 8</span>
+                        <span class="signal-tag">SQL Server · Oracle</span>
+                        <span class="signal-tag">ASP.NET · WCF</span>
+                        <span class="signal-tag blue">REST / SOAP Web Services</span>
+                        <span class="signal-tag blue">Angular · JavaScript</span>
+                        <span class="signal-tag gray">CST ✓</span>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-label">Communication</div>
-                        <div class="stat-value">Strong Written English</div>
+                    <div class="card-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">Core Stack</div>
+                            <div class="stat-value">C# · .NET · SQL</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Experience</div>
+                            <div class="stat-value">17 years</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Availability</div>
+                            <div class="stat-value">Immediate · CST</div>
+                        </div>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-label">Availability</div>
-                        <div class="stat-value">Immediate · CST</div>
+                    <div class="recruiter-notes">
+                        <div class="recruiter-notes-label">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                            Recruiter Notes
+                        </div>
+                        <p class="recruiter-notes-text">Chrystian's 17-year track record in the Microsoft stack is unmatched in this pool — ASP.NET WebForms to .NET Core 8, SQL Server, WCF, Web API, REST. He's navigated every version of the platform, which is a strong match for Syncsite's environment that likely has both older and newer .NET codebases. His Agile/PM background adds real organizational value on top of the technical depth. One flag to note: his screening responses leaned heavily on resume bullet points rather than narrative examples. We recommend a focused technical conversation to test his depth in practice before advancing.</p>
                     </div>
                 </div>
-            </div>
-            <div class="card-footer">
-                <span class="card-footer-note">Resume · Video Intro available</span>
-                <div class="cta-group">
-                    <a href="https://drive.google.com/file/d/1FlvjgFGR5oYZVaU99E5AX6HGl414WY0J/view?ts=69a99d65" target="_blank" class="btn btn-outline">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                        Video Intro
-                    </a>
-                    <a href="https://drive.google.com/file/d/1rLnJM5dceRJ9kev609Cr0ErBzs2RdEFC/view?usp=drive_link" target="_blank" class="btn btn-primary">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                        View Resume
-                    </a>
+                <div class="card-footer">
+                    <span class="card-footer-note">Resume · Video Intro available</span>
+                    <div class="cta-group">
+                        <a href="https://drive.google.com/file/d/1FlvjgFGR5oYZVaU99E5AX6HGl414WY0J/view?ts=69a99d65" target="_blank" class="btn btn-outline">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            Video Intro
+                        </a>
+                        <a href="https://drive.google.com/file/d/1rLnJM5dceRJ9kev609Cr0ErBzs2RdEFC/view?usp=drive_link" target="_blank" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            View Resume
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- ===== CANDIDATE 3: LUCAS ===== -->
-    <div class="candidate-card">
-        <div class="card">
-            <div class="card-top">
-                <div class="card-identity">
-                    <div class="card-avatar">L</div>
-                    <div>
-                        <div class="card-name">Lucas</div>
-                        <div class="card-title">Software Developer · .NET / C# · LATAM</div>
+        <!-- LUCAS (SANTOS) -->
+        <div class="candidate-card">
+            <div class="card">
+                <div class="card-top">
+                    <div class="card-identity">
+                        <div class="card-avatar">L</div>
+                        <div>
+                            <div class="card-name">Lucas</div>
+                            <div class="card-title">Software Developer · .NET / C# · Brazil</div>
+                        </div>
+                    </div>
+                    <div class="card-meta-right">
+                        <span class="card-salary">Within Budget Range</span>
                     </div>
                 </div>
-                <div class="card-meta-right">
-                    <span class="card-salary">$3,500 – $4,000 / mo</span>
-                </div>
-            </div>
-            <div class="card-body">
-                <p class="card-narrative">
-                    Lucas is a developer with a solid foundation in the Microsoft stack, combining <strong>C#, .NET, and SQL Server</strong> with the systems thinking needed to build integrations that connect CRM workflows to ERP data and third-party tools. He approaches new codebases methodically: read the data model, trace the business logic, then build cleanly on top of it.
-                </p>
-                <p class="card-narrative">
-                    He's comfortable working through complex requirements over email, turning ambiguous requests into structured technical tasks. <strong>AI tools are part of his daily workflow</strong>, which he uses to accelerate documentation and shorten debugging cycles. He's well-positioned for a role where the scope grows steadily over time.
-                </p>
-                <div class="signal-row">
-                    <span class="signal-tag">C# · .NET Framework/Core</span>
-                    <span class="signal-tag">SQL Server</span>
-                    <span class="signal-tag">ASP.NET</span>
-                    <span class="signal-tag blue">REST / SOAP Services</span>
-                    <span class="signal-tag blue">JavaScript</span>
-                    <span class="signal-tag blue">AI-Literate</span>
-                    <span class="signal-tag gray">CST-Compatible</span>
-                </div>
-                <div class="card-stats">
-                    <div class="stat-box">
-                        <div class="stat-label">Core Stack</div>
-                        <div class="stat-value">C# · .NET · SQL</div>
+                <div class="card-body">
+                    <p class="card-narrative">
+                        Lucas is a developer with a solid foundation in the Microsoft stack, combining <strong>C#, .NET, and SQL Server</strong> with the systems thinking needed to build integrations that connect CRM workflows to ERP data and third-party tools. He approaches new codebases methodically: read the data model, trace the business logic, then build cleanly on top of it.
+                    </p>
+                    <p class="card-narrative">
+                        He's comfortable working through complex requirements over email, turning ambiguous requests into structured technical tasks. <strong>AI tools are part of his daily workflow</strong>, used to accelerate documentation and shorten debugging cycles. He's well-positioned for a role where the scope grows steadily over time.
+                    </p>
+                    <div class="signal-row">
+                        <span class="signal-tag">C# · .NET Core</span>
+                        <span class="signal-tag">SQL Server</span>
+                        <span class="signal-tag blue">REST / SOAP Services</span>
+                        <span class="signal-tag blue">JavaScript</span>
+                        <span class="signal-tag blue">AI-Literate</span>
+                        <span class="signal-tag gray">UTC-3 / EST Overlap</span>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-label">Communication</div>
-                        <div class="stat-value">Strong Written English</div>
+                    <div class="card-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">Core Stack</div>
+                            <div class="stat-value">C# · .NET · SQL</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Experience</div>
+                            <div class="stat-value">8+ years</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Availability</div>
+                            <div class="stat-value">Immediate</div>
+                        </div>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-label">Availability</div>
-                        <div class="stat-value">Immediate · CST</div>
+                    <div class="recruiter-notes">
+                        <div class="recruiter-notes-label">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v16a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                            Recruiter Notes
+                        </div>
+                        <p class="recruiter-notes-text">Lucas brings 8 years of full-stack engineering from enterprise contexts across Brazil and Portugal — fintech, Open Banking, logistics. His .NET Core background is solid but secondary to Java/Spring Boot, so this role would require some ramp-up on the .NET-first mindset. That said, his architectural thinking and ability to deliver measurable outcomes (15–25% latency reduction, multiple enterprise integrations) make him a strong problem-solver in any environment. We believe he'd reach full productivity faster than his stack gap suggests. Worth a technical conversation to assess adaptability directly.</p>
                     </div>
                 </div>
-            </div>
-            <div class="card-footer">
-                <span class="card-footer-note">Resume available · Video Intro not submitted</span>
-                <div class="cta-group">
-                    <a href="https://drive.google.com/file/d/1_nx_IDGZhDCxJ9-PmcmHW_vVm1w44lAr/view?usp=drive_link" target="_blank" class="btn btn-primary">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                        View Resume
-                    </a>
+                <div class="card-footer">
+                    <span class="card-footer-note">Resume available · Video Intro not submitted</span>
+                    <div class="cta-group">
+                        <a href="https://drive.google.com/file/d/1_nx_IDGZhDCxJ9-PmcmHW_vVm1w44lAr/view?usp=drive_link" target="_blank" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            View Resume
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- ===== CANDIDATE 4: KELLY ===== -->
-    <div class="candidate-card">
-        <div class="card">
-            <div class="card-top">
-                <div class="card-identity">
-                    <div class="card-avatar">K</div>
-                    <div>
-                        <div class="card-name">Kelly</div>
-                        <div class="card-title">Software Developer · .NET / C# · LATAM</div>
+        <!-- KELLY -->
+        <div class="candidate-card">
+            <div class="card">
+                <div class="card-top">
+                    <div class="card-identity">
+                        <div class="card-avatar">K</div>
+                        <div>
+                            <div class="card-name">Kelly</div>
+                            <div class="card-title">Software Developer · .NET / C# · Colombia</div>
+                        </div>
+                    </div>
+                    <div class="card-meta-right">
+                        <span class="card-salary">Within Budget Range</span>
                     </div>
                 </div>
-                <div class="card-meta-right">
-                    <span class="card-salary">$3,500 – $4,000 / mo</span>
-                </div>
-            </div>
-            <div class="card-body">
-                <p class="card-narrative">
-                    Kelly brings a strong technical profile with direct experience on the Microsoft development stack, focusing on <strong>C#, .NET, and SQL Server</strong> with integration work across REST and SOAP interfaces. She thinks in systems: how data flows, where it breaks, and how to build reliable bridges between platforms without accumulating technical debt.
-                </p>
-                <p class="card-narrative">
-                    Her communication in English is professional and clear. She uses AI tools practically to shorten development cycles, not to replace engineering judgment. <strong>She's disciplined about async, email-heavy workflows</strong> and has demonstrated she can manage her own work without close supervision. A strong long-term candidate for a stable team.
-                </p>
-                <div class="signal-row">
-                    <span class="signal-tag">C# · .NET Framework/Core</span>
-                    <span class="signal-tag">SQL Server</span>
-                    <span class="signal-tag">ASP.NET</span>
-                    <span class="signal-tag blue">Web Services Integration</span>
-                    <span class="signal-tag blue">XML / JSON</span>
-                    <span class="signal-tag blue">AI-Literate</span>
-                    <span class="signal-tag gray">CST-Compatible</span>
-                </div>
-                <div class="card-stats">
-                    <div class="stat-box">
-                        <div class="stat-label">Core Stack</div>
-                        <div class="stat-value">C# · .NET · SQL</div>
+                <div class="card-body">
+                    <p class="card-narrative">
+                        Kelly brings a strong technical profile with direct experience on the Microsoft development stack, focusing on <strong>C#, .NET, and SQL Server</strong> with integration work across REST interfaces and webhooks. She thinks in systems: how data flows, where it breaks, and how to build reliable bridges between platforms without accumulating technical debt.
+                    </p>
+                    <p class="card-narrative">
+                        Her communication in English is professional and clear. She uses AI tools practically to shorten development cycles, not to replace engineering judgment. <strong>She recently built an AI-powered chat system connecting C# .NET, n8n, and SQL via webhooks</strong> — exactly the kind of multi-system integration Syncsite needs. Disciplined, self-managed, strong long-term candidate.
+                    </p>
+                    <div class="signal-row">
+                        <span class="signal-tag">C# · .NET Framework/Core</span>
+                        <span class="signal-tag">SQL Server (5+ yrs)</span>
+                        <span class="signal-tag">ASP.NET</span>
+                        <span class="signal-tag blue">Web Services · Webhooks</span>
+                        <span class="signal-tag blue">n8n + AI Workflows</span>
+                        <span class="signal-tag blue">React · JavaScript</span>
+                        <span class="signal-tag gray">EST / CST-Adjacent</span>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-label">Communication</div>
-                        <div class="stat-value">Strong Written English</div>
+                    <div class="card-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">Core Stack</div>
+                            <div class="stat-value">C# · .NET · SQL Server</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Experience</div>
+                            <div class="stat-value">6 years</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Availability</div>
+                            <div class="stat-value">Immediate</div>
+                        </div>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-label">Availability</div>
-                        <div class="stat-value">Immediate · CST</div>
+                    <div class="recruiter-notes">
+                        <div class="recruiter-notes-label">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v16a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                            Recruiter Notes
+                        </div>
+                        <p class="recruiter-notes-text">Kelly is technically the sharpest on .NET in Batch 1. Six years of backend development in the .NET ecosystem, SQL Server across five years, and hands-on multi-layer integration work (C# .NET + n8n + webhooks + SQL) — it maps directly to Syncsite's integration scope. She also leads and mentors teams, which means she can grow into more responsibility as Syncsite expands. She's transitioning from her current role in Colombia, available to start quickly. Strong English, professional communication, very results-oriented in how she presents her work.</p>
                     </div>
                 </div>
-            </div>
-            <div class="card-footer">
-                <span class="card-footer-note">Resume · Video Intro available</span>
-                <div class="cta-group">
-                    <a href="https://drive.google.com/file/d/16lK6JkAs5iUkzM79OGseq2j48cHddoPz/view" target="_blank" class="btn btn-outline">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                        Video Intro
-                    </a>
-                    <a href="https://drive.google.com/file/d/10MJE3D_QzaHncw107S43ExuPbeVFWOF9/view?usp=drive_link" target="_blank" class="btn btn-primary">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                        View Resume
-                    </a>
+                <div class="card-footer">
+                    <span class="card-footer-note">Resume · Video Intro available</span>
+                    <div class="cta-group">
+                        <a href="https://drive.google.com/file/d/16lK6JkAs5iUkzM79OGseq2j48cHddoPz/view" target="_blank" class="btn btn-outline">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            Video Intro
+                        </a>
+                        <a href="https://drive.google.com/file/d/10MJE3D_QzaHncw107S43ExuPbeVFWOF9/view?usp=drive_link" target="_blank" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            View Resume
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-</section>
+    </section><!-- end candidates-section -->
 
-<!-- ===== RECRUITER ===== -->
+    <!-- ===== BATCH 1 COMPARISON TABLE ===== -->
+    <section class="comparison-section">
+        <div class="comparison-inner">
+            <h2>Batch 1 — Side by Side</h2>
+            <p class="section-sub">Scored against Syncsite's JD requirements: C# / .NET / SQL Server / ASP.NET / REST-SOAP / AI Literacy / CST timezone.</p>
+            <div class="comp-table-wrap">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Aaron</th>
+                            <th>Chrystian</th>
+                            <th>Lucas</th>
+                            <th>Kelly</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Location</td>
+                            <td>Costa Rica</td>
+                            <td>Mexico</td>
+                            <td>Brazil</td>
+                            <td>Colombia</td>
+                        </tr>
+                        <tr>
+                            <td>Timezone</td>
+                            <td><span class="tz-good">CST ✓</span></td>
+                            <td><span class="tz-good">CST ✓</span></td>
+                            <td><span class="tz-ok">UTC-3 / EST</span></td>
+                            <td><span class="tz-ok">EST</span></td>
+                        </tr>
+                        <tr>
+                            <td>Rate</td>
+                            <td>Within range</td>
+                            <td>Within range</td>
+                            <td>Within range</td>
+                            <td>Within range</td>
+                        </tr>
+                        <tr>
+                            <td>Core Stack</td>
+                            <td>C# · .NET Core · SQL Server</td>
+                            <td>C# · .NET · ASP.NET · WCF</td>
+                            <td>Java-first · .NET Core · SQL</td>
+                            <td>C# · .NET · SQL Server</td>
+                        </tr>
+                        <tr>
+                            <td>Experience</td>
+                            <td>3 years</td>
+                            <td>17 years</td>
+                            <td>8+ years</td>
+                            <td>6 years</td>
+                        </tr>
+                        <tr>
+                            <td>CRM / Integration</td>
+                            <td>REST API integrations</td>
+                            <td>Legacy enterprise systems</td>
+                            <td>Open Banking, fintech APIs</td>
+                            <td>Multi-system integrations ✓</td>
+                        </tr>
+                        <tr>
+                            <td>AI Literacy</td>
+                            <td><span class="dash">—</span></td>
+                            <td><span class="dash">—</span></td>
+                            <td>Limited mention</td>
+                            <td>n8n + AI workflows ✓</td>
+                        </tr>
+                        <tr>
+                            <td>JD Match Score</td>
+                            <td><span class="score-pill score-mid">69 / 100</span></td>
+                            <td><span class="score-pill score-mid">77 / 100</span></td>
+                            <td><span class="score-pill score-low">57 / 100</span></td>
+                            <td><span class="score-pill score-mid">78 / 100</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+</div><!-- end batch-1 -->
+
+
+<!-- ========================================================= -->
+<!-- =================== BATCH 2 CONTENT ==================== -->
+<!-- ========================================================= -->
+<div class="batch-content" id="batch-2">
+
+    <!-- ===== EDITORIAL ===== -->
+    <section class="editorial">
+        <div class="editorial-label">Batch 2 · March 26, 2026</div>
+        <h2>Stronger stack match. Deeper integration experience. One candidate who has already built a CRM.</h2>
+        <p>
+            Batch 2 goes deeper on the core requirements. Every candidate here has C# and .NET as their primary professional stack — not a secondary skill. Two of them have direct enterprise integration experience at scale, and one has built a CRM from end to end at a production company.
+        </p>
+        <p>
+            <strong>The bar we applied was higher for this batch.</strong> Beyond technical fit, we scored each candidate against Syncsite's actual JD across 12 dimensions — from SQL Server depth and ASP.NET experience to timezone fit, AI literacy, and communication quality. The results are in the comparison table below.
+        </p>
+        <div class="editorial-divider"></div>
+        <p>
+            All three are currently available, can commit to the 8am–5pm CST schedule, and fall within or near the stated budget range. <strong>If one candidate from Batch 1 is already moving forward, Batch 2 gives you a stronger fallback and a higher ceiling.</strong>
+        </p>
+    </section>
+
+    <!-- ===== CANDIDATES ===== -->
+    <section class="candidates-section">
+        <div class="candidates-header">
+            <h2>Batch 2 Shortlist</h2>
+            <p>Three developers. All with C# / .NET as primary stack. Scored directly against Syncsite's JD. Presented in no particular order.</p>
+        </div>
+
+        <!-- LUCAS D. -->
+        <div class="candidate-card">
+            <div class="card">
+                <div class="card-top">
+                    <div class="card-identity">
+                        <div class="card-avatar">L</div>
+                        <div>
+                            <div class="card-name">Lucas D.</div>
+                            <div class="card-title">Senior .NET Developer · C# / SQL Server · Azure · Brazil</div>
+                        </div>
+                    </div>
+                    <div class="card-meta-right">
+                        <span class="card-salary">$3,500 / mo</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-narrative">
+                        Lucas has spent the last decade building and leading .NET systems across Brazil and Portugal — enterprise applications, CRM builds, data integration pipelines, and web APIs. At Sollo Brasil he developed and owned more than 20 custom applications end-to-end, <strong>including a full CRM build: requirements, design, development, deployment, user training.</strong> He then moved into a tech lead role at Unipartner IT Services in Portugal, managing deadlines, delivery planning, and UI/UX alongside development.
+                    </p>
+                    <p class="card-narrative">
+                        He's currently a Senior .NET Developer at Foton Informática, working on the Caixa Econômica Federal API platform — Brazil's largest bank. His Azure certifications (Fundamentals, Developer Associate, Data Fundamentals, AI Fundamentals) and direct use of <strong>Whisper AI and ChatGPT</strong> in his workflow put him well above the AI literacy bar. He also holds a postgraduate specialization in cloud architecture.
+                    </p>
+                    <div class="signal-row">
+                        <span class="signal-tag">C# · .NET Framework / Core</span>
+                        <span class="signal-tag">SQL Server · Entity Framework</span>
+                        <span class="signal-tag">ASP.NET · Blazor · Razor</span>
+                        <span class="signal-tag blue">CRM Built from Scratch ✓</span>
+                        <span class="signal-tag blue">REST APIs · Web Services</span>
+                        <span class="signal-tag blue">Microsoft Azure</span>
+                        <span class="signal-tag gold">Whisper AI · ChatGPT · GPT-4</span>
+                    </div>
+                    <div class="card-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">Core Stack</div>
+                            <div class="stat-value">C# · .NET · SQL Server</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Experience</div>
+                            <div class="stat-value">10+ years</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Availability</div>
+                            <div class="stat-value">Immediate</div>
+                        </div>
+                    </div>
+                    <div class="recruiter-notes">
+                        <div class="recruiter-notes-label">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                            Recruiter Notes
+                        </div>
+                        <p class="recruiter-notes-text">Lucas stands out for one reason most .NET candidates don't: he has actually built a CRM system from scratch. At Sollo Brasil he owned the full lifecycle — requirements gathering, design, development, and user training — across more than 20 custom applications, including that CRM build. That's directly transferable to what Syncsite does every day. His Azure certifications and experience leading teams in Portugal add professional seniority beyond what the resume alone conveys. He's methodical, communicates clearly in writing, and uses AI tools daily (Whisper AI, ChatGPT). Highest JD match score in both batches: 92/100. Strongly recommend advancing.</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span class="card-footer-note">Resume · Video Intro available</span>
+                    <div class="cta-group">
+                        <a href="https://pub-320f624a298145c09bbf1003b5cf0a27.r2.dev/uploads/17fa75d1-d8ef-4703-a46d-38028e1b6f74" target="_blank" class="btn btn-outline">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            Video Intro
+                        </a>
+                        <a href="https://prod-fillout-oregon-s3.s3.us-west-2.amazonaws.com/orgid-351357/flowpublicid-hjMELEzht8us/cf73cf66-f1d5-48cf-86c2-8c693ae3e35b-EXn481crg9iVXN4W7PhunallT63YBbqEa5nwsy1Rh90JiPN0W7rpDvGyTT3xKBTU4YQKNyf7NUjdAKAX93X5VYhz5o1UhdyMaso/resume-Lucas-EN.pdf" target="_blank" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            View Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROBERTO M. -->
+        <div class="candidate-card">
+            <div class="card">
+                <div class="card-top">
+                    <div class="card-identity">
+                        <div class="card-avatar">R</div>
+                        <div>
+                            <div class="card-name">Roberto M.</div>
+                            <div class="card-title">Senior Full-Stack Developer · .NET Core / C# / ASP.NET · Dominican Republic</div>
+                        </div>
+                    </div>
+                    <div class="card-meta-right">
+                        <span class="card-salary">$3,500 – $4,000 / mo</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-narrative">
+                        Roberto's resume reads like a direct checklist against Syncsite's JD. Currently at UpTalentQuest: <strong>developing the backend in .NET / C#, building ASP.NET Core REST API endpoints, building ASP.NET pages, and handling front-end with React</strong>. Before that, at Quantum IT Solutions he built cloud SaaS products in .NET Core, maintained .NET Framework projects, migrated .NET 6 apps, and launched ASP MVC web pages — all in production environments serving real clients under healthcare and food compliance standards (HIPAA, HL7, FDA).
+                    </p>
+                    <p class="card-narrative">
+                        His education at Alberta University in Canada confirms strong English proficiency. He's a clean coder who applies OWASP principles, writes in close collaboration with QA and team leads, and flags issues proactively. <strong>He leverages AI in his daily development workflow.</strong> Dominican Republic timezone sits between EST and CST, with minimal scheduling friction.
+                    </p>
+                    <div class="signal-row">
+                        <span class="signal-tag">C# · .NET Core / Framework</span>
+                        <span class="signal-tag">ASP.NET REST API · MVC</span>
+                        <span class="signal-tag">SQL · MySQL · MS SQL</span>
+                        <span class="signal-tag blue">Cloud SaaS · Microservices</span>
+                        <span class="signal-tag blue">React · JavaScript</span>
+                        <span class="signal-tag blue">OWASP · Clean Code</span>
+                        <span class="signal-tag gold">AI in Daily Workflow</span>
+                    </div>
+                    <div class="card-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">Core Stack</div>
+                            <div class="stat-value">C# · .NET Core · ASP.NET</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Experience</div>
+                            <div class="stat-value">8+ years</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Availability</div>
+                            <div class="stat-value">Immediate</div>
+                        </div>
+                    </div>
+                    <div class="recruiter-notes">
+                        <div class="recruiter-notes-label">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v16a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                            Recruiter Notes
+                        </div>
+                        <p class="recruiter-notes-text">Roberto's profile is essentially a point-by-point match against the JD: .NET Core backend, ASP.NET REST APIs, ASP MVC pages, React frontend, SQL, microservices — all in production, client-facing environments. His work under healthcare compliance standards (HIPAA, HL7) shows he knows how to operate where precision matters. Canadian university background is a strong English signal, and his screening communication confirms it. What sets him apart in this batch is the breadth of his stack — he can handle both backend logic and frontend integration, which means fewer handoff points on a small delivery team. 85/100 JD match score.</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span class="card-footer-note">Resume · Video Intro available</span>
+                    <div class="cta-group">
+                        <a href="https://drive.google.com/file/d/1nSFdXTNC_sYoTAnL_DQ0GzDJhhemwCJf/view?usp=drive_web" target="_blank" class="btn btn-outline">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            Video Intro
+                        </a>
+                        <a href="https://prod-fillout-oregon-s3.s3.us-west-2.amazonaws.com/orgid-351357/flowpublicid-qqCHtazNDtus/57b49e55-c5f2-4742-b551-6bdfdf840467-nl7g7cTham46cuSEKUfaAllx8YY1fzHbT2xG9Bb1EMq7LKPvcNqGkQdKF1Ff7kJy0SagqgIAGiwmhj43UdMmCLhykTc4NQmWJDb/Roberto-Minagorri-Resume.pdf" target="_blank" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            View Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ASTRID V. -->
+        <div class="candidate-card">
+            <div class="card">
+                <div class="card-top">
+                    <div class="card-identity">
+                        <div class="card-avatar">A</div>
+                        <div>
+                            <div class="card-name">Astrid V.</div>
+                            <div class="card-title">Senior Integrations Developer · Scrum Master · Mexico</div>
+                        </div>
+                    </div>
+                    <div class="card-meta-right">
+                        <span class="card-salary">$3,000 – $3,500 / mo</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-narrative">
+                        Astrid spent three years at Oracle building and deploying scalable microservice integrations in Oracle Integration Cloud (OIC), where she achieved a <strong>30% reduction in integration development time, 99%+ service availability, and a 40% faster incident response time</strong>. Her work involves REST and SOAP APIs, XSLT data mapping, data transformation pipelines, and cross-system data flows — the exact pattern that shows up in CRM-to-ERP integration work.
+                    </p>
+                    <p class="card-narrative">
+                        She also has hands-on C# and ASP.NET Core experience from her time at Copayment (fintech, Mexico), where she built ASP.NET Core web applications with Angular and SQL. She's a certified Scrum Master, runs PI Planning, and manages sprint ceremonies with cross-functional teams. <strong>CST-based in Mexico, available immediately, and uses Cursor AI daily.</strong>
+                    </p>
+                    <div class="signal-row">
+                        <span class="signal-tag">ASP.NET Core · C#</span>
+                        <span class="signal-tag">SQL Server · PL/SQL</span>
+                        <span class="signal-tag blue">REST / SOAP APIs</span>
+                        <span class="signal-tag blue">Oracle OIC · Microservices</span>
+                        <span class="signal-tag blue">XSLT · Data Transformation</span>
+                        <span class="signal-tag blue">Angular · JavaScript</span>
+                        <span class="signal-tag gold">Cursor AI · Active Use</span>
+                        <span class="signal-tag gray">CST ✓</span>
+                    </div>
+                    <div class="card-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">Core Stack</div>
+                            <div class="stat-value">ASP.NET · OIC · SQL</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Experience</div>
+                            <div class="stat-value">5+ years</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Availability</div>
+                            <div class="stat-value">Immediate · CST</div>
+                        </div>
+                    </div>
+                    <div class="recruiter-notes">
+                        <div class="recruiter-notes-label">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v16a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                            Recruiter Notes
+                        </div>
+                        <p class="recruiter-notes-text">Astrid's strength is integrations — she's done this at enterprise scale at Oracle with measurable outcomes (30% faster development cycles, 99%+ uptime, 40% incident response improvement). Her REST/SOAP, XSLT, and data transformation background maps very directly to the CRM-to-ERP data flow work Syncsite does. Her C# and ASP.NET Core experience comes from her fintech role at Copayment, so it's real production work, not just a listed skill. She's also a Scrum Master, which means she can run sprints, communicate across technical and non-technical stakeholders, and manage delivery cadence independently. The main consideration is that her primary specialty is Oracle OIC, not Microsoft stack — Syncsite's environment would require her to shift primary focus. 75/100 JD match score. Best fit if integration architecture is the priority over raw C# depth.</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span class="card-footer-note">Resume · Video Intro available</span>
+                    <div class="cta-group">
+                        <a href="https://drive.google.com/file/d/1IC1XtkiOKXiO8xYLWj_qYYwE3xhIdDXe/view" target="_blank" class="btn btn-outline">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            Video Intro
+                        </a>
+                        <a href="https://prod-fillout-oregon-s3.s3.us-west-2.amazonaws.com/orgid-351357/flowpublicid-rQ49eifbexus/9818c6fa-1381-4fe0-b84a-9202419091c5-41qasfqFXS3rqs7D2PNP0YMsVkA6OzMrhVxac1RA1pHVernyIIdLfp3G5FNtcHPBGYyrOWjBkCCLRyaJDK9RpoLsEKm5LrEm8BC/ASTRID-VILLAZUL-CV-V3.pdf" target="_blank" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            View Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section><!-- end candidates-section batch 2 -->
+
+    <!-- ===== BATCH 2 COMPARISON TABLE ===== -->
+    <section class="comparison-section">
+        <div class="comparison-inner">
+            <h2>Batch 2 — Side by Side</h2>
+            <p class="section-sub">Scored against Syncsite's JD: C# / .NET / SQL Server / ASP.NET / REST-SOAP / AI Literacy / CST timezone / Budget fit. Score out of 100.</p>
+            <div class="comp-table-wrap">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Lucas D.</th>
+                            <th>Roberto M.</th>
+                            <th>Astrid V.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Location</td>
+                            <td>Brazil</td>
+                            <td>Dominican Republic</td>
+                            <td>Mexico</td>
+                        </tr>
+                        <tr>
+                            <td>Timezone</td>
+                            <td><span class="tz-ok">UTC-3 / EST overlap</span></td>
+                            <td><span class="tz-ok">EST</span></td>
+                            <td><span class="tz-good">CST ✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Rate</td>
+                            <td>$3,500 / mo</td>
+                            <td>$3,500 – $4,000 / mo</td>
+                            <td>$3,000 – $3,500 / mo</td>
+                        </tr>
+                        <tr>
+                            <td>Core Stack</td>
+                            <td>C# · .NET · SQL Server · Azure</td>
+                            <td>C# · .NET Core · ASP.NET · React</td>
+                            <td>ASP.NET Core · Oracle OIC · SQL</td>
+                        </tr>
+                        <tr>
+                            <td>C# as Primary Stack</td>
+                            <td><span class="check">✓ Primary</span></td>
+                            <td><span class="check">✓ Primary</span></td>
+                            <td>Secondary (primary: Oracle OIC)</td>
+                        </tr>
+                        <tr>
+                            <td>SQL Server</td>
+                            <td><span class="check">✓ Production</span></td>
+                            <td><span class="check">✓ Production</span></td>
+                            <td><span class="check">✓ Listed (5+ yrs)</span></td>
+                        </tr>
+                        <tr>
+                            <td>Experience</td>
+                            <td>10+ years</td>
+                            <td>8+ years</td>
+                            <td>5+ years</td>
+                        </tr>
+                        <tr>
+                            <td>CRM / Integration</td>
+                            <td><span class="check">✓ Built CRM from scratch</span></td>
+                            <td>ERP modules · Cloud SaaS</td>
+                            <td>Oracle OIC integrations (enterprise)</td>
+                        </tr>
+                        <tr>
+                            <td>AI Literacy</td>
+                            <td>Azure AI · Whisper AI · ChatGPT</td>
+                            <td>AI in daily workflow</td>
+                            <td>Cursor AI (active daily use)</td>
+                        </tr>
+                        <tr>
+                            <td>JD Match Score</td>
+                            <td><span class="score-pill score-high">92 / 100 ⭐</span></td>
+                            <td><span class="score-pill score-high">85 / 100</span></td>
+                            <td><span class="score-pill score-mid">75 / 100</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+</div><!-- end batch-2 -->
+
+
+<!-- ===== RECRUITER SECTION ===== -->
 <section class="recruiter-section">
     <div class="recruiter-inner">
         <h2>Your point of contact</h2>
@@ -1004,7 +1458,7 @@
                 <div class="recruiter-name">Miguel Agudelo Londoño</div>
                 <div class="recruiter-role">White Glove Talent Advisor · Sagan · Based in Colombia</div>
                 <p class="recruiter-bio">
-                    Miguel is your dedicated recruiter for this search. He conducted the initial screening interviews with every candidate on this shortlist, <strong>evaluating technical depth, English fluency, and communication style</strong> against Syncsite's specific requirements. He specializes in sourcing .NET and Microsoft stack developers across Latin America and understands what it takes for a remote developer to integrate into a US-based delivery team. Reach out directly with questions about any candidate or to schedule next steps.
+                    Miguel is your dedicated recruiter for this search. He conducted the screening interviews with every candidate across both batches, <strong>evaluating technical depth, English fluency, and communication style</strong> against Syncsite's specific requirements. He specializes in sourcing .NET and Microsoft stack developers across Latin America and understands what it takes for a remote developer to integrate into a US-based delivery team. Reach out directly with questions about any candidate or to schedule next steps.
                 </p>
                 <div class="recruiter-contact">
                     <a href="mailto:miguel.a@getsagan.com">
@@ -1051,6 +1505,34 @@
 <footer class="footer">
     <p>Prepared by Sagan White Glove for Syncsite · March 2026 · <a href="https://getsagan.com" target="_blank">getsagan.com</a></p>
 </footer>
+
+<script>
+    function switchBatch(batch) {
+        // Update tab buttons
+        document.querySelectorAll('.tab-btn').forEach(function(btn) {
+            btn.classList.remove('active');
+        });
+        document.querySelector('.tab-btn[data-batch="' + batch + '"]').classList.add('active');
+
+        // Update content panels
+        document.querySelectorAll('.batch-content').forEach(function(panel) {
+            panel.classList.remove('active');
+        });
+        document.getElementById('batch-' + batch).classList.add('active');
+
+        // Scroll to below the hero
+        var nav = document.getElementById('batch-nav');
+        if (nav) {
+            window.scrollTo({ top: nav.offsetTop - 10, behavior: 'smooth' });
+        }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') switchBatch(1);
+        if (e.key === 'ArrowRight') switchBatch(2);
+    });
+</script>
 
 </body>
 </html>
